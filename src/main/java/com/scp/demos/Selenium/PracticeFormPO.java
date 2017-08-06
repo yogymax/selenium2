@@ -1,12 +1,26 @@
 package com.scp.demos.Selenium;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.util.List;
 
+import org.apache.bcel.classfile.Constant;
+import org.apache.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
+import com.gargoylesoftware.htmlunit.javascript.background.JavaScriptExecutor;
+import com.scp.utility.InitiazeDrivers;
+
 public class PracticeFormPO {
+	
+	public Logger log = Logger.getLogger(PracticeFormPO.class);
 	
 	@FindBy(name="firstname")
 	private WebElement firstNameInput;
@@ -32,6 +46,36 @@ public class PracticeFormPO {
 	@FindBy(id="selenium_commands")
 	private WebElement seleniumCommands;
 	
+	@FindBy(id="photo")
+	private WebElement browseBtn;
+	
+	
+
+	public void uploadFile(String path) throws AWTException, InterruptedException{
+		setFilePathIntoClipBoard(path);////set data into system clipboard
+		browseBtn.click();
+		Thread.sleep(1000);
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_V);
+		
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+		robot.keyRelease(KeyEvent.VK_V);
+		Thread.sleep(1000);
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);
+		
+	}
+	
+
+	private void setFilePathIntoClipBoard(String path) {
+		log.info(path);
+		StringSelection selection = new StringSelection(path);
+	    Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+	    clipboard.setContents(selection, selection);
+	}
+
+
 
 	public void fillPracticeForm(String fName,String lName){
 		firstNameInput.clear();

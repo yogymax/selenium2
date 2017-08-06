@@ -6,4 +6,13 @@
       <class name="com.scp.demos.Selenium.TestOrangeHRM"/>
     </classes>
   </test> <!-- Default test -->
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.scp.demos.Selenium.TestOrangeHRM">
+        <methods>
+          <include name="testLogin" invocation-numbers="4"/>
+        </methods>
+      </class> <!-- com.scp.demos.Selenium.TestOrangeHRM -->
+    </classes>
+  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

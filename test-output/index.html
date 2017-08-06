@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Default_suite">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,12 +49,12 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\Progvaltion_11\AppData\Local\Temp\testng-eclipse-2107931192\testng-customsuite.xml</span>
+                    <span>C:\Users\Progvaltion_11\AppData\Local\Temp\testng-eclipse-748607291\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-Default_suite">
-                    <span class="test-stats">1 test</span>
+                    <span class="test-stats">2 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">5 methods, 1 failed,   4 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.scp.demos.Selenium.TestOrangeHRM" hash-for-method="testLogin(, , Username/password cannot be empty)">testLogin(, , Username/password cannot be empty)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,7 +116,22 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.scp.demos.Selenium.TestOrangeHRM" hash-for-method="testSearchFunctionality">testSearchFunctionality</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.scp.demos.Selenium.TestOrangeHRM" hash-for-method="testLogin(Admin, admin21321, Invalid credentials)">testLogin(Admin, admin21321, Invalid credentials)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.scp.demos.Selenium.TestOrangeHRM" hash-for-method="testLogin(Admin, , Password cannot be empty)">testLogin(Admin, , Password cannot be empty)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.scp.demos.Selenium.TestOrangeHRM" hash-for-method="testLogin(Admin, admin, SuccessFul)">testLogin(Admin, admin, SuccessFul)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.scp.demos.Selenium.TestOrangeHRM" hash-for-method="testLogin(, admin, Username cannot be empty)">testLogin(, admin, Username cannot be empty)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -117,6 +146,52 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.scp.demos.Selenium.TestOrangeHRM</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLogin(, , Username/password cannot be empty)">
+                  </a> <!-- testLogin(, , Username/password cannot be empty) -->
+                  <span class="method-name">testLogin</span>
+                  <span class="parameters">(, , Username/password cannot be empty)</span>
+                  <div class="stack-trace">junit.framework.ComparisonFailure: expected:&lt;.../password...&gt; but was:&lt;......&gt;
+	at junit.framework.Assert.assertEquals(Assert.java:81)
+	at junit.framework.Assert.assertEquals(Assert.java:87)
+	at com.scp.demos.Selenium.TestOrangeHRM.testLogin(TestOrangeHRM.java:63)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -125,9 +200,34 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testSearchFunctionality">
-                  </a> <!-- testSearchFunctionality -->
-                  <span class="method-name">testSearchFunctionality</span>
+                  <a name="testLogin(Admin, admin21321, Invalid credentials)">
+                  </a> <!-- testLogin(Admin, admin21321, Invalid credentials) -->
+                  <span class="method-name">testLogin</span>
+                  <span class="parameters">(Admin, admin21321, Invalid credentials)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLogin(Admin, , Password cannot be empty)">
+                  </a> <!-- testLogin(Admin, , Password cannot be empty) -->
+                  <span class="method-name">testLogin</span>
+                  <span class="parameters">(Admin, , Password cannot be empty)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLogin(Admin, admin, SuccessFul)">
+                  </a> <!-- testLogin(Admin, admin, SuccessFul) -->
+                  <span class="method-name">testLogin</span>
+                  <span class="parameters">(Admin, admin, SuccessFul)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLogin(, admin, Username cannot be empty)">
+                  </a> <!-- testLogin(, admin, Username cannot be empty) -->
+                  <span class="method-name">testLogin</span>
+                  <span class="parameters">(, admin, Username cannot be empty)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -135,7 +235,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Progvaltion_11\AppData\Local\Temp\testng-eclipse-2107931192\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Progvaltion_11\AppData\Local\Temp\testng-eclipse-748607291\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -147,6 +247,15 @@
       &lt;class name=&quot;com.scp.demos.Selenium.TestOrangeHRM&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
+  &lt;test name=&quot;Default test(failed)&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.scp.demos.Selenium.TestOrangeHRM&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;testLogin&quot; invocation-numbers=&quot;4&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.scp.demos.Selenium.TestOrangeHRM --&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Default test(failed) --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -159,6 +268,9 @@
             <ul>
               <li>
                 <span class="test-name">Default test (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">Default test(failed) (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -184,16 +296,32 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(5);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testSearchFunctionality')
+data.setCell(0, 1, 'testLogin')
 data.setCell(0, 2, 'com.scp.demos.Selenium.TestOrangeHRM')
-data.setCell(0, 3, 143099);
+data.setCell(0, 3, 17149);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'testLogin')
+data.setCell(1, 2, 'com.scp.demos.Selenium.TestOrangeHRM')
+data.setCell(1, 3, 12347);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'testLogin')
+data.setCell(2, 2, 'com.scp.demos.Selenium.TestOrangeHRM')
+data.setCell(2, 3, 12163);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'testLogin')
+data.setCell(3, 2, 'com.scp.demos.Selenium.TestOrangeHRM')
+data.setCell(3, 3, 11097);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'testLogin')
+data.setCell(4, 2, 'com.scp.demos.Selenium.TestOrangeHRM')
+data.setCell(4, 3, 10404);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -214,7 +342,7 @@ return data;
             <div class="ignored-class-div">
               <span class="ignored-class-name">com.scp.demos.Selenium.TestOrangeHRM</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">testLogin</span>
+                <span class="ignored-method-name">testSearchFunctionality</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -228,8 +356,26 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">com.scp.demos.Selenium.TestOrangeHRM</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">testSearchFunctionality</span>
+                <span class="method-name">testLogin(Admin, admin, SuccessFul)</span>
                 <span class="method-start">0 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLogin(Admin, admin21321, Invalid credentials)</span>
+                <span class="method-start">17151 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLogin(, admin, Username cannot be empty)</span>
+                <span class="method-start">29499 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLogin(Admin, , Password cannot be empty)</span>
+                <span class="method-start">41664 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testLogin(, , Username/password cannot be empty)</span>
+                <span class="method-start">52069 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

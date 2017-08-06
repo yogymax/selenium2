@@ -1,16 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="1" total="5" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="143122" started-at="2017-08-05T08:44:44Z" finished-at="2017-08-05T08:47:07Z">
+  <suite name="Default suite" duration-ms="63188" started-at="2017-08-06T07:44:16Z" finished-at="2017-08-06T07:45:19Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="143122" started-at="2017-08-05T08:44:44Z" finished-at="2017-08-05T08:47:07Z">
+    <test name="Default test" duration-ms="63188" started-at="2017-08-06T07:44:16Z" finished-at="2017-08-06T07:45:19Z">
       <class name="com.scp.demos.Selenium.TestOrangeHRM">
-        <test-method status="PASS" signature="testSearchFunctionality()[pri:0, instance:com.scp.demos.Selenium.TestOrangeHRM@28d25987]" name="testSearchFunctionality" duration-ms="143099" started-at="2017-08-05T14:14:44Z" finished-at="2017-08-05T14:17:07Z">
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.scp.demos.Selenium.TestOrangeHRM@3e6fa38a]" name="testLogin" duration-ms="17149" started-at="2017-08-06T13:14:16Z" data-provider="xyz" finished-at="2017-08-06T13:14:33Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[SuccessFul]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testSearchFunctionality -->
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.scp.demos.Selenium.TestOrangeHRM@3e6fa38a]" name="testLogin" duration-ms="12347" started-at="2017-08-06T13:14:33Z" data-provider="xyz" finished-at="2017-08-06T13:14:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[admin21321]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Invalid credentials]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.scp.demos.Selenium.TestOrangeHRM@3e6fa38a]" name="testLogin" duration-ms="12163" started-at="2017-08-06T13:14:46Z" data-provider="xyz" finished-at="2017-08-06T13:14:58Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Username cannot be empty]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.scp.demos.Selenium.TestOrangeHRM@3e6fa38a]" name="testLogin" duration-ms="10404" started-at="2017-08-06T13:14:58Z" data-provider="xyz" finished-at="2017-08-06T13:15:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Password cannot be empty]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="FAIL" signature="testLogin(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.scp.demos.Selenium.TestOrangeHRM@3e6fa38a]" name="testLogin" duration-ms="11097" started-at="2017-08-06T13:15:08Z" data-provider="xyz" finished-at="2017-08-06T13:15:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Username/password cannot be empty]]>
+              </value>
+            </param>
+          </params>
+          <exception class="junit.framework.ComparisonFailure">
+            <message>
+              <![CDATA[expected:<.../password...> but was:<......>]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[junit.framework.ComparisonFailure: expected:<.../password...> but was:<......>
+	at junit.framework.Assert.assertEquals(Assert.java:81)
+	at junit.framework.Assert.assertEquals(Assert.java:87)
+	at com.scp.demos.Selenium.TestOrangeHRM.testLogin(TestOrangeHRM.java:63)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- junit.framework.ComparisonFailure -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
       </class> <!-- com.scp.demos.Selenium.TestOrangeHRM -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

@@ -5,42 +5,60 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.safari.SafariDriver;
-import org.openqa.selenium.support.PageFactory;
 
-import com.scp.demos.Selenium.PracticeFormPO;
 import com.scp.utility.AppConstants.BrowserTypes;
 
 public class InitiazeDrivers {
 	
+	public static Logger logger = Logger.getLogger(InitiazeDrivers.class);
+	
 	public static WebDriver driver=null;
 	
 	public static WebDriver launchBrowser(String url, BrowserTypes browserType) throws InvalidBrowserNameExcetion{
-	
+		DesiredCapabilities handlSSLErr=null;
+		  
 		switch(browserType){
 			case CHROME :
-					System.out.println("Initilizing chrome browser");
+					logger.info("Initilizing chrome browser");
+					handlSSLErr = DesiredCapabilities.chrome();   
+					System.setProperty("webdriver.chrome.driver", "C:\\Users\\Progvaltion_11\\Downloads\\chromedriver_win32_1\\chromedriver.exe");
 					driver = new ChromeDriver();
 					break;
 			case FIREFOX :
-					System.out.println("Initilizing Firefox browser");
+					logger.setLevel(Level.ALL);
+					logger.fatal("Initilizing Firefox browser");
+					logger.error("Initilizing Firefox browser");
+					logger.warn("Initilizing Firefox browser");
+					logger.info("Initilizing Firefox browser");
+					logger.debug("Initilizing Firefox browser");
+					logger.trace("Initilizing Firefox browser");
+					 handlSSLErr = DesiredCapabilities.firefox();   
 					driver = new FirefoxDriver();
 					break;
 			case IE :
-					System.out.println("Initilizing IE browser");
+					logger.info("Initilizing IE browser");
+					 handlSSLErr = DesiredCapabilities.internetExplorer();
 					driver = new InternetExplorerDriver();
 					break;
 			case SAFARI :
-					System.out.println("Initilizing Safari browser");
+					logger.info("Initilizing Safari browser");
+					 handlSSLErr = DesiredCapabilities.safari();  
 					driver = new SafariDriver();
 					break;
 			case EDGE :
-					System.out.println("Initilizing edge browser");
+					logger.info("Initilizing edge browser");
+					 handlSSLErr = DesiredCapabilities.edge();  
 					driver = new EdgeDriver();
 					break;
 			
@@ -49,6 +67,7 @@ public class InitiazeDrivers {
 		if(driver==null)
 			throw new InvalidBrowserNameExcetion("nit enter kr re....");
 		
+		handlSSLErr.setCapability (CapabilityType.ACCEPT_SSL_CERTS, true);
 		driver.get(url);
 		driver.manage().window().maximize();
 		return driver;
@@ -135,9 +154,9 @@ public class InitiazeDrivers {
 		ResultSet rset = stmt.executeQuery("select * from category where categoryid=8");
 		while(rset.next()){
 			
-				System.out.println("--------------------------");
-				System.out.print(rset.getInt("CATEGORYID"));
-				System.out.print("\t\t"+rset.getString("CATEGORYNAME"));
+				logger.info("--------------------------");
+				logger.info(rset.getInt("CATEGORYID"));
+				logger.info("\t\t"+rset.getString("CATEGORYNAME"));
 		}
 		
 		stmt.close();
@@ -156,12 +175,16 @@ public class InitiazeDrivers {
 	
 	
 	
+	public static void scrollPageDown(){
+		JavascriptExecutor jse = (JavascriptExecutor)InitiazeDrivers.driver;
+		jse.executeScript("window.scrollBy(0,250)");
+	}
 	
 	
-	
-	
-	
-	
+	public static void scrollPageUp(){
+		JavascriptExecutor jse = (JavascriptExecutor)InitiazeDrivers.driver;
+		jse.executeScript("window.scrollBy(0,-250)");
+	}
 	
 	
 	

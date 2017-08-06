@@ -2,6 +2,7 @@ package com.scp.demos.Selenium;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
@@ -16,6 +17,8 @@ import com.scp.utility.MyPageFactory;
 
 public class OrangeHRMDashboard implements MyPageFactory {
 
+	public static Logger log = Logger.getLogger(OrangeHRMDashboard.class);
+	
 	@FindBy(id="menu_admin_viewAdminModule")
 	private WebElement adminMenu;
 
@@ -41,6 +44,7 @@ public class OrangeHRMDashboard implements MyPageFactory {
 	private WebElement table;
 	
 	public boolean isPageloaded() {
+		log.info("inside ispageloaded method");
 		 try{
 			return dashboardMenu.isDisplayed();
 		 }catch(Exception e){
